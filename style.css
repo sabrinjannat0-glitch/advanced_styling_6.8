@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #1b1c21;
+}
+
+/* Fixed 320px sidebar on the left regardless of screen size */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  padding: 18px 24px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-shadow:
+    16px 0 52px 0 rgba(14, 24, 80, 0.2),
+    -2px 0 4px 0 rgba(69, 79, 126, 0.02);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+/* Header */
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 46px;
+}
+
+.mobile-menu__close {
+  margin-right: 16px;
+}
+
+.mobile-menu__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.mobile-menu__logo:hover {
+  opacity: 0.8;
+  filter: brightness(0.95);
+}
+
+.mobile-menu__search {
+  margin-left: auto;
+}
+
+/* Circular icon buttons */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.icon-btn img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-btn:hover {
+  opacity: 0.75;
+  filter: brightness(0.9) saturate(1.15);
+}
+
+.icon-btn:focus-visible {
+  outline: 2px solid #41f6d7;
+  outline-offset: 2px;
+}
+
+/* Navigation list */
+.mobile-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mobile-menu__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu__link {
+  position: relative;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1b1c21;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.mobile-menu__link::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 32px;
+  background-color: #41f6d7;
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu__link--active {
+  color: #7e7e82;
+}
+
+.mobile-menu__link--active::before {
+  opacity: 1;
+}
+
+.mobile-menu__link:hover {
+  color: #7e7e82;
+  opacity: 0.75;
+  filter: opacity(0.85);
+}
+
+.mobile-menu__link:hover::before {
+  opacity: 1;
+}
+
+/* Footer */
+.mobile-menu__footer {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.mobile-menu__contacts {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.mobile-menu__mail {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1b1c21;
+  text-decoration: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.mobile-menu__mail:hover {
+  opacity: 0.7;
+  filter: opacity(0.8);
+}
+
+.mobile-menu__phone {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  color: #1b1c21;
+  text-decoration: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.mobile-menu__phone:hover {
+  opacity: 0.7;
+  filter: opacity(0.8);
+}
+
+/* Language switcher */
+.mobile-menu__lang {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mobile-menu__lang-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1b1c21;
+  cursor: pointer;
+  transition: color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.mobile-menu__lang-btn--active {
+  color: #7e7e82;
+}
+
+.mobile-menu__lang-btn:hover {
+  color: #7e7e82;
+  opacity: 0.7;
+  filter: opacity(0.8);
+}
